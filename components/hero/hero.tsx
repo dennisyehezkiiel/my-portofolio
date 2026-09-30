@@ -35,13 +35,17 @@ export function Hero() {
           </StaggerItem>
           <StaggerItem>
             <h1 className="font-display text-[clamp(2.75rem,7.5vw,6.25rem)] font-extrabold leading-[0.92] tracking-tight">
-              I build systems that <span className="bg-lime px-2 text-ink">don&apos;t page</span> you at 3am.
+              I build systems that{" "}
+              <span className="bg-lime px-2 text-ink">don&apos;t page</span> you
+              at 3am.
             </h1>
           </StaggerItem>
           <StaggerItem>
             <p className="mt-6 max-w-xl text-lg text-muted">
-              <span className="text-fg">{profile.name}</span> — {profile.role}. Distributed backends, fast frontends, and
-              the boring infrastructure that keeps both alive.
+              <span className="text-fg">{profile.name}</span> — {profile.role}.
+              Software Engineer with 4 years of experience crafting
+              high-performance. Turning complex design requirements into intuitive digital
+              products.
             </p>
           </StaggerItem>
           <StaggerItem className="mt-10 flex flex-wrap gap-4">

@@ -34,7 +34,7 @@ export function Projects() {
       style={pinned ? { height: `${projects.length * 75}vh` } : undefined}
       className="relative"
     >
-      <div className={pinned ? "sticky top-0 flex h-svh flex-col justify-center gap-12 overflow-clip" : "py-24"}>
+      <div className={pinned ? "sticky top-0 flex h-svh flex-col justify-center gap-12 overflow-clip" : "py-0 md:py-24"}>
         <div className="mx-auto w-full max-w-6xl px-4 sm:px-8">
           <SectionHeading index="01" title="Selected work" note={pinned ? "scroll →" : "swipe →"} />
         </div>
