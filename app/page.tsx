@@ -13,7 +13,10 @@ export default function Home() {
       <Projects />
       <Timeline />
 
-      <section id="contact" className="border-t border-line px-4 pb-40 pt-28 sm:px-8">
+      <section
+        id="contact"
+        className="border-t border-line px-4 pb-28 md:pb-40 pt-20 md:pt-28 sm:px-8"
+      >
         <Stagger className="mx-auto max-w-6xl">
           <StaggerItem>
             <p className="font-mono text-sm text-lime">03 — contact</p>
@@ -29,21 +32,32 @@ export default function Home() {
             <Magnetic>
               <a
                 href={`mailto:${profile.email}`}
-                className="inline-flex items-center gap-2 rounded-lg bg-lime px-7 py-4 text-lg font-bold text-ink transition-shadow hover:shadow-[0_0_50px_-6px_var(--color-lime)]"
+                className="inline-flex items-center gap-2 rounded-lg bg-lime px-7 py-4 text-sm md:text-lg font-bold text-ink transition-shadow hover:shadow-[0_0_50px_-6px_var(--color-lime)]"
               >
                 {profile.email} <ArrowUpRight aria-hidden size={20} />
               </a>
             </Magnetic>
-            <a href={profile.github} target="_blank" rel="noreferrer" className="font-mono text-sm text-muted hover:text-fg">
+            <a
+              href={profile.github}
+              target="_blank"
+              rel="noreferrer"
+              className="font-mono text-sm text-muted hover:text-fg"
+            >
               GitHub ↗
             </a>
-            <a href={profile.linkedin} target="_blank" rel="noreferrer" className="font-mono text-sm text-muted hover:text-fg">
+            <a
+              href={profile.linkedin}
+              target="_blank"
+              rel="noreferrer"
+              className="font-mono text-sm text-muted hover:text-fg"
+            >
               LinkedIn ↗
             </a>
           </StaggerItem>
         </Stagger>
         <p className="mx-auto mt-24 max-w-6xl font-mono text-xs text-muted">
-          © {new Date().getFullYear()} {profile.name}. Hand-built, no templates harmed.
+          © {new Date().getFullYear()} {profile.name}. Hand-built, no templates
+          harmed.
         </p>
       </section>
     </main>
