@@ -1,26 +1,63 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-ink: #0b0c10;
+  --color-surface: #14161c;
+  --color-line: #262a33;
+  --color-fg: #edede6;
+  --color-muted: #8a92a6;
+  --color-lime: #ccff00;
+  --color-violet: #8b5cf6;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-bricolage);
+  --font-display: var(--font-bricolage);
+  --font-mono: var(--font-jetbrains);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+html {
+  color-scheme: dark;
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-ink);
+  color: var(--color-fg);
+}
+
+::selection {
+  background: var(--color-lime);
+  color: var(--color-ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-lime);
+  outline-offset: 3px;
+}
+
+/* Hero: faint static grid + a brighter grid and violet glow that follow the pointer (--mx/--my set in JS). */
+.hero-bg {
+  --grid: linear-gradient(var(--color-line) 1px, transparent 1px), linear-gradient(90deg, var(--color-line) 1px, transparent 1px);
+  background-image: var(--grid);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse at 50% 40%, #000 20%, transparent 75%);
+}
+
+.hero-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(500px circle at var(--mx, 70%) var(--my, 40%), rgb(139 92 246 / 0.22), transparent 60%),
+    var(--grid);
+  background-size: auto, 56px 56px;
+  mask-image: radial-gradient(260px circle at var(--mx, 70%) var(--my, 40%), #000, transparent 100%);
+  filter: brightness(2.2);
 }
